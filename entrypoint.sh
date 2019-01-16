@@ -10,6 +10,9 @@ cat << EOF > ~/.gem/credentials
 EOF
 set -x
 
+echo "Installing dependencies..."
+bundle install > /dev/null 2>&1
+
 echo "Running gem release task..."
 release_command="${RELEASE_COMMAND:-rake release}"
 exec $release_command
