@@ -15,8 +15,8 @@ This is a GitHub Action written to streamline the Ruby gem publication process. 
 
 ```hcl
 workflow "Publish Gem" {
-    on = "push"
-    resolves = ["Release Gem"]
+  on = "push"
+  resolves = ["Release Gem"]
 }
 
 action "Tag Filter" {
