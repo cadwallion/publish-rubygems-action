@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 echo "Setting up gem credentials..."
 set +x
