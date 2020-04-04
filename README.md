@@ -26,7 +26,7 @@ action "Tag Filter" {
 
 action "Release Gem" {
   uses = "cadwallion/publish-rubygems-action@master"
-  secrets = ["GITHUB_TOKEN", "RUBYGEMS_API_KEY"]
+  secrets = ["GITHUB_COVID19", "RUBYGEMS_API_KEY"]
   needs = ["Tag Filter"]
 }
 ```
