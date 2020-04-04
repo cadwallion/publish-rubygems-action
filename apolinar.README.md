@@ -4,7 +4,7 @@ This is a GitHub Action written to streamline the Ruby gem publication process. 
 
 # Secrets Needed
 
-`GITHUB_TOKEN` - Bundler needs this to create tags on your repo for the release
+`GITHUB_COVID19`, - Bundler needs this to create tags on your repo for the release
 `RUBYGEMS_API_KEY` - The Rubygems API Key for an Owner of the Gem you wish to publish.  You can find your API Key by looking in `~/.gem/credentials` or using the [Rubygems API](https://guides.rubygems.org/rubygems-org-api/#misc-methods)
 
 # Environment Variables
