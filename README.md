@@ -13,20 +13,27 @@ This is a GitHub Action written to streamline the Ruby gem publication process. 
 
 # Example
 
-```hcl
-workflow "Publish Gem" {
-  on = "push"
-  resolves = ["Release Gem"]
-}
+```yml
+name: Publish Gem
 
-action "Tag Filter" {
-  uses = "actions/bin/filter@master"
-  args = "tag v*"
-}
+on:
+  push:
+    branches:
+      - "*"
+    tags:
+      - v*
+jobs:
+  build:
+    runs-on: ubuntu-latest
 
-action "Release Gem" {
-  uses = "cadwallion/publish-rubygems-action@master"
-  secrets = ["GITHUB_TOKEN", "RUBYGEMS_API_KEY"]
-  needs = ["Tag Filter"]
-}
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Release Gem
+        if: contains(github.ref, 'refs/tags/v')
+        uses: cadwallion/publish-rubygems-action@master
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          RUBYGEMS_API_KEY: ${{secrets.RUBYGEMS_API_KEY}}
+          RELEASE_COMMAND: rake release
 ```
