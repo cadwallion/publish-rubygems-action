@@ -14,7 +14,7 @@ chmod 0600 ~/.gem/credentials
 set -x
 
 echo "Installing dependencies..."
-bundle install > /dev/null 2>&1
+bundle install > /dev/null
 
 echo "Running gem release task..."
 release_command="${RELEASE_COMMAND:-rake release}"
