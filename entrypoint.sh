@@ -18,4 +18,5 @@ bundle install > /dev/null
 
 echo "Running gem release task..."
 release_command="${RELEASE_COMMAND:-rake release}"
-exec $release_command
+eval "${release_command}"
+exit
