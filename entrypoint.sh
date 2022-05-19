@@ -13,6 +13,9 @@ EOF
 chmod 0600 ~/.gem/credentials
 set -x
 
+work_directory="${WORKDIR:-.}"
+cd $work_directory
+
 echo "Installing dependencies..."
 bundle install > /dev/null
 
