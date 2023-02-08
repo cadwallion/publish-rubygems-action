@@ -13,6 +13,8 @@ EOF
 chmod 0600 ~/.gem/credentials
 set -x
 
+git config --global --add safe.directory "$(pwd)"
+
 work_directory="${WORKDIR:-.}"
 cd $work_directory
 
